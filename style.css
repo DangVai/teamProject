@@ -1,0 +1,529 @@
+body {
+    font-family: 'Kaisei Tokumin', serif;
+    padding-top: 50px; /* Điều chỉnh theo chiều cao header */
+}
+
+/* cc cho phần header chỉnh */
+   .header {
+        width: 100%;
+        height: 40px;
+        background-color: #F7C9CC;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000; /* Đảm bảo header nằm trên các phần tử khác */
+    }
+
+    .header-left,
+    .header-right {
+        display: flex;
+        align-items: center;
+        list-style-type: none; /* Tắt dấu chấm tròn */
+    }
+
+    .header-left li,
+    .header-right li {
+        margin-right: 15px;
+    }
+
+    /* Đặt container cho input và button */
+    .input-container {
+        position: relative;
+        width: 300px; /* Độ rộng của input và button */
+    }
+
+    /* Đặt style cho input */
+    .input-container input[type="text"] {
+        width: 90%;
+        padding: 10px;
+        padding-right: 1px; /* Chừa khoảng trống cho nút button */
+        border: 1px solid #ced4da;
+        border-radius: 20px;
+    }
+
+    /* Đặt style cho button */
+    .input-container button {
+        position: absolute;
+        right: 25px;
+        top: 2px;
+        height: 90%;
+        width: 40px;
+        background-color: white;
+        border: none;
+        padding: -3 10px;
+        border-radius: 0 10px 10px 0; /* Bo góc phải của button */
+        cursor: pointer;
+    }
+    .fa-regular.fa-magnifying-glass {
+        color: black; /* Đặt màu biểu tượng thành đen */
+        font-size: 100%;
+    }
+
+    /* Chỉnh thêm nút và các mục trong header */
+    .header-right li {
+        display: flex;
+        align-items: center;
+    }
+
+    .header li a {
+        color: white; /* Đặt màu trắng cho cả biểu tượng và văn bản */
+        text-decoration: none; /* Tắt gạch chân nếu cần */
+    }
+
+    .header li a:hover {
+        color: #2b2222; /* Thêm hiệu ứng hover nếu cần, ví dụ màu xám nhạt */
+    }
+    
+/* css cho đoạn thông báo */
+
+
+/* css cho phần header dưới */
+    #head {
+        text-align: center;
+    }
+    
+
+    .head h1 {
+        margin-top: 50px;
+        margin-bottom: 40px; /* Tạo khoảng cách dưới tiêu đề */
+        font-size: 50px;
+    }
+
+    .head nav ul {
+        list-style-type: none; /* Tắt dấu chấm tròn */
+        padding: 0; /* Loại bỏ khoảng cách mặc định của ul */
+        margin: 0;
+        display: flex; /* Sử dụng flexbox để sắp xếp các mục nằm ngang */
+        justify-content: center; /* Căn giữa các mục */
+    }
+
+    .head nav ul li {
+        margin: 0 15px; /* Tạo khoảng cách giữa các mục */
+    }
+
+    .head nav ul li a {
+        text-decoration: none; /* Tắt gạch chân */
+        color: black; /* Màu văn bản */
+        font-weight: bold; /* Tăng độ đậm của văn bản */
+    }
+
+    .head nav ul li a:hover {
+        color: #888;
+    }
+    .underline {
+        width: 100%;
+        height: 1px;
+        background-color: black;
+        margin: 10px 0;
+    }
+    .cover {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white; /* Light background */
+        padding: 50px;
+    }
+
+
+    /* Style cho ô thông báo */
+    .notification-box {
+        display: none;
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        background-color: #F7C9CC; /* Màu nền */
+        color: rgb(2, 0, 0);
+        padding: 15px;
+        border-radius: 5px;
+        top: 55px; /* Điều chỉnh khoảng cách từ icon đến thông báo */
+        right: 180px; /* Căn phải với icon */
+        z-index: 1; /* Đảm bảo thông báo nằm trên các phần tử khác */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0.3, 0.7); /* Hiệu ứng đổ bóng */
+    }
+
+
+
+/* Styles for the chat bubble */
+    .chat-bubble {
+        position: fixed;
+        bottom: 200px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background-color: #007bff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+        transition: background-color 0.3s ease;
+    }
+
+    .chat-bubble:hover {
+        background-color: #0056b3;
+    }
+
+/* Styles for the chat box */
+    .chat-box {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        width: 300px;
+        height: 400px;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        display: none; /* Ẩn khung chat ban đầu */
+        flex-direction: column;
+        z-index: 1000;
+    }
+
+/* Chat header */
+    .chat-header {
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .close-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+/* Chat body */
+    .chat-body {
+        flex: 1;
+        padding: 10px;
+        overflow-y: auto;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .messages {
+        display: flex;
+        flex-direction: column;
+    }
+    .message {
+        align-self: flex-end; /* Căn tin nhắn về bên phải */
+        padding: 10px;
+        background-color: #584af0;
+        border-radius: 5px;
+        margin-left: auto; /* Đẩy tin nhắn về phía phải */
+        margin-right: 0; /* Loại bỏ khoảng trống bên phải */
+        max-width: 80%; /* Giới hạn chiều rộng của tin nhắn */
+        word-wrap: break-word; /* Đảm bảo nội dung xuống dòng nếu quá dài */
+    }
+/* Chat footer */
+    .chat-footer {
+        display: flex;
+        padding: 10px;
+        border-top: 1px solid #243394;
+    }
+
+    .chat-footer input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #454acf;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+
+    .chat-footer button {
+        background-color: #007bff;
+        color: rgb(252, 252, 252);
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .chat-footer button:hover {
+        background-color: #0056b3;
+    }
+
+/* css cho đoạn bộ lọch */
+    .bo-loch {
+        display: flex;
+        flex-wrap: wrap; /* Cho phép các phần tử con xuống dòng */
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        width: 90%; /* Điều chỉnh chiều rộng của phần chứa */
+        margin: 0 auto; /* Căn giữa bo-loch trong màn hình */
+    }
+
+    .bo-loch_item {
+        display: flex;
+        flex-direction: column; /* Đổi sang column nếu bạn muốn sắp xếp dọc các phần tử bên trong */
+        text-align: center; /* Căn giữa chữ trong thẻ */
+        background-color: #F7C9CC;
+        margin: 20px; /* Giảm khoảng cách giữa các item */
+        width: 406px; /* Chiều rộng cố định của item */
+        height: 254px; /* Chiều cao cố định của item */
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0.6, 0.5, 0.5);
+        transition: transform 0.3s;
+    }
+
+    .bo-loch a{
+        text-decoration: none;
+        color: whitesmoke;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .bo-loch i {
+        margin-bottom: 30px;
+        margin-top: 60px;
+        font-size: 100px;
+        color: white;
+        transition: color 0.3s ease; /* Thêm hiệu ứng chuyển đổi màu */
+    }
+    
+    .bo-loch i:hover {
+        color: #ff69b4; /* Màu khi chuột hover vào */
+    }
+    
+
+/* css cho item */
+    .product-Discover {
+        display: flex; /* Sử dụng flexbox để sắp xếp các item nằm ngang */
+        overflow-x: auto; /* Cho phép cuộn ngang */
+        scroll-snap-type: x mandatory; /* Kích hoạt hiệu ứng cuộn snap */
+        width: 89%;
+        padding: 20px;
+        margin: 0 auto; /* Căn giữa phần tử */
+    }
+
+    .price {
+        display: inline-flex; /* Đặt giá và icon trên cùng một dòng */
+        align-items: center;  /* Căn giữa theo chiều dọc */
+    }
+    
+    .price-value {
+        color: red;
+    }
+    
+    .more-info {
+        margin-left: 4px; /* Tạo khoảng cách giữa giá và icon */
+        text-decoration: none; /* Bỏ gạch chân */
+        font-weight: bold;
+        color: black; /* Màu của icon ">" */
+        font-size: 20px; /* Điều chỉnh kích thước của icon nếu cần */
+    }
+    
+    
+    .course-item {
+        display: flex;
+        flex-direction: column; /* Sắp xếp các phần tử con theo chiều dọc */
+        align-items: center; /* Căn giữa theo chiều ngang */
+        justify-content: center; /* Căn giữa theo chiều dọc */
+        text-align: center; /* Căn giữa chữ trong thẻ */
+        margin-top: 40px;
+        margin: 30px 20px;
+        width: 35%;
+        height: 600px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s; /* Hiệu ứng chuyển động cho item */
+        position: relative; /* Thay đổi vị trí để áp dụng hiệu ứng */
+    }
+
+    .course-item img {
+        width: 90%;
+        height: 70%;
+        transition: transform 0.5s; /* Hiệu ứng chuyển động cho hình ảnh */
+    }
+
+    .course-item:hover img {
+        transform: scale(1.3); /* Phóng to hình ảnh khi hover */
+    }
+
+    .course-item:hover {
+        transform: scale(1.07); /* Phóng to item khi hover */
+    }
+
+    .course-item p {  
+        font-size: 13px;
+        margin: 0;
+    }
+    .course-item h3 {
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+    /* Hiệu ứng cho hình ảnh khi cuộn */
+    .product-Discover:hover .course-item img {
+        transform: translateY(-40px); /* Di chuyển hình ảnh lên khi cuộn qua item */
+    }
+
+
+
+/* Tăng kích thước của slideshow */
+    .slideshow {
+        overflow: hidden;
+        height: 700px; /* Chiều cao giữ nguyên hoặc tùy chỉnh theo ý bạn */
+        width: 1300px; /* Tăng chiều rộng của slideshow lên 1200px */
+        margin: 0 auto; /* Căn giữa slideshow */
+    }
+
+    .slide {
+        float: left;
+        height: 600px; /* Chiều cao giữ nguyên */
+        width: 1300px; /* Tăng chiều rộng của mỗi slide lên 1200px */
+    }
+
+    .slide-wrapper {
+        width: calc(1300px * 4); /* Tăng tổng chiều rộng của tất cả slide */
+        animation: slide 10s ease infinite;
+    }
+
+    .slide img {
+        width: 100%;  /* Ảnh chiếm 100% chiều rộng của slide */
+        height: 100%; /* Ảnh chiếm 100% chiều cao của slide */
+        object-fit: cover; /* Đảm bảo ảnh không bị méo */
+    }
+
+    /* Điều chỉnh lại keyframes animation cho slide */
+    @keyframes slide {
+        20% {
+            margin-left: 0px;
+        }
+        40% {
+            margin-left: calc(-1300px * 1); /* Di chuyển mỗi slide 1200px theo kích thước mới */
+        }
+        60% {
+            margin-left: calc(-1300px * 2); /* Di chuyển slide thứ 2 */
+        }
+        80% {
+            margin-left: calc(-1300px * 3); /* Di chuyển slide thứ 3 */
+        }
+    }
+
+    .Discover {
+        display: flex;
+        justify-content: center; /* Căn giữa theo chiều ngang */ 
+        text-align: center;
+    }
+
+    .Discover p{
+        display: flex;
+        width: 70%;
+        justify-content: center; /* Căn giữa theo chiều ngang */ 
+        font-size: 20px;
+    }
+    
+    .Discover button {
+        border-radius: 30px;
+        font-size: 25px;
+        background-color: #020202;
+    }
+    .Discover a{
+        color: white;
+    }
+
+    
+
+/* css cho phần footer */
+    .footer {
+        margin-top: 100px;
+        width: 98%;
+        height: 300px;
+        background-color: #090000; /* Màu nền cho footer */
+        padding: 20px; /* Khoảng cách bên trong */
+    }
+    
+    .eboutique-services {
+        margin-top: 0;
+        display: flex;
+        justify-content: center; /* Căn giữa theo chiều ngang */
+    }
+    .eboutique-services h1, h2 {
+        margin: 10px 0; /* Khoảng cách trên và dưới cho tiêu đề */
+        color: #fefdfd; /* Màu chữ cho tiêu đề */
+        text-align: center; /* Căn giữa tiêu đề */
+    }
+    
+    .eboutique-services p {
+        color: #fefdfd; /* Màu chữ cho mô tả */
+        text-align: center; /* Căn giữa mô tả */
+    }
+    
+
+    .service {
+        display: flex;
+        flex-direction: column; /* Sắp xếp theo cột */
+        align-items: center;    /* Căn giữa theo chiều ngang */
+        justify-content: center; /* Căn giữa theo chiều dọc */
+        padding: 20px;
+        width: 250px;
+        height: 150px;
+        text-align: center;
+    }
+    
+    .service i {
+        font-size: 50px;
+        color: white;
+        margin-bottom: 10px; /* Khoảng cách giữa icon và tiêu đề */
+    }
+    
+
+
+/* css cho phần footer end */
+    .footer-end {
+        width: 98%;
+        height: 300px;
+        background-color: white; /* Màu nền cho footer */
+        padding: 20px; /* Khoảng cách bên trong */
+    }
+    .eboutique-services-end {
+        margin-top: 0;
+        display: flex;
+        justify-content: center; /* Căn giữa theo chiều ngang */
+    }
+    .eboutique-services-end h1, h2 {
+        color: #fefdfd; /* Màu chữ cho tiêu đề */
+        text-align: center; /* Căn giữa tiêu đề */
+    }
+    .eboutique-services-end p {
+        color: #020202; /* Màu chữ cho mô tả */
+        text-align: center; /* Căn giữa mô tả */
+    }
+    .service-end {
+        display: flex;
+        flex-direction: column; /* Sắp xếp theo cột */
+        align-items: center;    /* Căn giữa theo chiều ngang */
+        justify-content: space-between; /* Căn giữa theo chiều dọc */
+        padding-left: 50px;
+        padding-right: 50px;
+        width: 250px;
+        height: 150px;
+        text-align: center;
+    }
+    .service-end a {
+        color: rgb(7, 0, 0);
+        margin-bottom: 20px; /* Khoảng cách giữa icon và tiêu đề */
+    }
+    
+    .footer-end_container {
+        display: flex;
+        justify-content: space-between; /* Để căn đều các item (tuỳ chỉnh nếu cần) */
+    }
+    
+    .item {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        border-radius: 50px;
+        padding: 10px;
+        background-color: lightgray;
+    }

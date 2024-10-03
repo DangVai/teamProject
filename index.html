@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dior</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- html cho phần header chỉnh -->
+    <header class="header">
+        <nav class="header-left">
+            <li><a href=""><i class="fa-solid fa-phone"></i> Customer Service</a></li>
+            <li><a href=""><i class="fa-solid fa-location-dot"></i> The Boutiques</a></li>
+        </nav>
+
+        <nav class="header-right">
+            <div class="input-container">
+
+                <input type="text" id="header-input" placeholder="Search on dior.com">
+                <button class="button-search" onclick="search()">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            
+            <li>
+                <a href="javascript:void(0)">
+                    <i class="fa-solid fa-bell" onclick="toggleNotification()"></i>
+                </a>
+            <!-- html cho thành thông báo -->
+                <div class="notification-box" id="notificationBox">
+                    <span class="closebtn" onclick="hideNotification()">&times;</span>
+                    <p id="ok">No new notifications.</p> 
+                    <!-- Phần tử để hiển thị thông báo -->
+                </div>
+            </li>
+            
+            
+            <li><a href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <li><a href=""><i class="fa-solid fa-user-large"></i> Log in / Sign in</a></li>
+        </nav>
+    </header>
+
+<!-- html cho phần header dưới -->
+    <header class="head" id="head">
+        <h1>DIOR</h1>
+        <nav>
+            <ul>
+                <li><a href="">FRAGRANCES</a></li>
+                <li><a href="">MAKEUP</a></li>
+                <li><a href="">SKINCARE</a></li>
+                <li><a href="">GIFTS</a></li>
+                <li><a href="">SERVICES</a></li>
+                <li><a href="">FASHION & ACCESSORIES</a></li>
+            </ul>
+        </nav>
+        <div class="underline"></div>
+    </header>
+    <div class="cover">
+        <h1 class="cover-content">DISCOVER MISS DIOR</h1>
+    </div>
+
+<!-- bóng bóng chát -->
+    <div class="chat-bubble" id="chatBubble">
+        <i class="fa-solid fa-comments"></i>
+    </div>
+
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <h3>Chat with me</h3>
+            <button class="close-btn" id="closeChat">X</button>
+        </div>
+
+        <div class="chat-body">
+            <div class="messages" id="messages">
+                <!-- Tin nhắn sẽ hiện ra ở đây -->
+            </div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="messageInput" placeholder="Type your message...">
+            <button id="sendMessage">Send</button>
+        </div>
+    </div>
+
+
+        
+        <!-- html cho phần slideshow  -->
+        <div class="slideshow">
+            <div class="slide-wrapper">
+                <div class="slide">
+                    <img src="img/image 7.jpg" alt="GeeksforGeeks" class="slide-image">
+                </div>
+                <div class="slide">
+                    <img src="img/tải xuống (2).jpg" alt="A computer science portal" class="slide-image">
+                </div>
+                <div class="slide">
+                    <img src="img/tải xuống (3).jpg" alt="This is an example of" class="slide-image">
+                </div>
+                <div class="slide">
+                    <img src="img/tải xuống (4).jpg" alt="Slideshow with HTML and CSS only" class="slide-image">
+                </div>
+            </div>
+        </div>
+
+        <div class="Discover">
+            <h1>Discover</h1>
+        </div>
+    
+    
+    <!-- html cho phần lọc -->
+    <div class="bo-loch">
+        <a href="">
+            <div class="bo-loch_item">
+                <i class="fas fa-air-freshener"></i>
+                <h3>Perfume</h3>
+            </div>
+        </a>
+
+        <a href="">
+            <div class="bo-loch_item">
+                <i class="fas fa-pump-soap"></i>
+                <h3>Makeup</h3>
+            </div>
+        </a>
+
+        <a href="">
+            <div class="bo-loch_item">
+                <i class="fas fa-smile"></i>
+                <h3>Skincare</h3>
+            </div>
+        </a>
+
+        <a href="">
+            <div class="bo-loch_item">
+                <i class="fas fa-tshirt"></i>
+                <h3>Clothing</h3>
+            </div>
+        </a>
+        <a href="">
+            <div class="bo-loch_item">
+                <i class="fas fa-briefcase"></i>
+                <h3>Accessories</h3>
+            </div>
+        </a>
+        <a href="">
+            <div class="bo-loch_item">
+                <i class="fas fa-shoe-prints"></i>
+                <h3>Footwear</h3>
+            </div>
+        </a>
+    </div>
+
+
+    <!-- html cho các sản phẩm -->
+    <div class="product-Discover" id="product-Discover">
+        <!-- sản phẩm sẽ được thêm vào đây -->
+    </div>
+
+    <div class="Discover">
+        <h1>MEN'S FRAGRANCES</h1>
+    </div>
+
+    <div class="Discover">
+        <h1>Discover</h1>
+    </div>
+    
+    <div class="product-Discover" id="product-DiscoverOne">
+        <!-- sản phẩm sẽ được thêm vào đây -->
+    </div>
+    <div >
+
+    <div class="Discover">
+        <h1>MAKEUP</h1>
+    </div>
+    
+
+    <div class="slideshow">
+        <div class="slide-wrapper">
+            <div class="slide">
+                <img src="img/88fd65fe5b509172f19fce83d3848d5b.png" alt="GeeksforGeeks" class="slide-image">
+            </div>
+            <div class="slide">
+                <img src="img/tải xuống (2).jpg" alt="A computer science portal" class="slide-image">
+            </div>
+            <div class="slide">
+                <img src="img/tải xuống (3).jpg" alt="This is an example of" class="slide-image">
+            </div>
+            <div class="slide">
+                <img src="img/tải xuống (4).jpg" alt="Slideshow with HTML and CSS only" class="slide-image">
+            </div>
+        </div>
+    </div>
+
+    <div class="Discover">
+        <h1>Discover</h1>
+    </div>
+
+
+    <div class="product-Discover" id="product-DiscoverTwo">
+        <!-- sản phẩm sẽ được thêm vào đây -->
+    </div>
+
+    <div class="Discover">
+        <h1>SKINCARE</h1>
+    </div>
+
+    <div class="slideshow">
+        <div class="slide-wrapper">
+            <div class="slide">
+                <img src="img/tải xuống (1).jpg" alt="GeeksforGeeks" class="slide-image">
+            </div>
+            <div class="slide">
+                <img src="img/tải xuống (2).jpg" alt="A computer science portal" class="slide-image">
+            </div>
+            <div class="slide">
+                <img src="img/tải xuống (3).jpg" alt="This is an example of" class="slide-image">
+            </div>
+            <div class="slide">
+                <img src="img/tải xuống (4).jpg" alt="Slideshow with HTML and CSS only" class="slide-image">
+            </div>
+        </div>
+    </div>
+    
+    <div class="Discover">
+        <h1>Discover</h1>
+    </div>
+
+    <div class="product-Discover" id="product-DiscoverThree">
+        <!-- sản phẩm sẽ được thêm vào đây -->
+    </div>
+
+    <div class="Discover">
+        <h1>TRY IT FIRST EXCLUSIVELY ON DIOR.COM.AU</h1>
+    </div>
+
+    <div class="slideshow">
+        <div class="slide-wrapper">
+            <div class="slide">
+                <img src="img/tải xuống (1).jpg" alt="GeeksforGeeks" class="slide-image">
+            </div>
+            <div class="slide">
+                <img src="img/tải xuống (2).jpg" alt="A computer science portal" class="slide-image">
+            </div>
+            <div class="slide">
+                <img src="img/tải xuống (3).jpg" alt="This is an example of" class="slide-image">
+            </div>
+            <div class="slide">
+                <img src="img/tải xuống (4).jpg" alt="Slideshow with HTML and CSS only" class="slide-image">
+            </div>
+        </div>
+    </div>
+
+    <div class="Discover">
+        <p>Exclusively on Dior.com.au, receive a free sample with your full-size purchase and try the fragrance before wearing or gifting it*. This gives you the option of returning your unopened bottle** for reimbursement if necessary.</p>
+    </div>
+
+    <div class="Discover">
+        <h1>Discover</h1>
+    </div>
+
+    <div class="Discover">
+        <h1>TRY IT FIRST - LA COLLECTION PRIVEE</h1>
+    </div>
+
+    <div class="product-Discover" id="product-DiscoverFour">
+        <!-- sản phẩm sẽ được thêm vào đây -->
+    </div>
+
+    <div class="Discover">
+        <h1>LIMITED EDITIONS & ONLINE EXCLUSIVES</h1>
+    </div>
+
+    <div class="product-Discover" id="product-DiscoverFive">
+        <!-- sản phẩm sẽ được thêm vào đây -->
+    </div>
+
+    <div class="Discover">
+        <h1>EXCLUSIVE SERVICES</h1>
+    </div>
+
+
+    <div class="product-Discover" id="product-DiscoverSix">
+        <!-- sản phẩm sẽ được thêm vào đây -->
+    </div>
+
+    <div class="Discover">
+        <h1>OUR BOUTIQUES</h1>
+    </div>
+
+    <div class="Discover">
+        <button><a href="">Find nearest store</a></button>
+    </div>
+
+    <footer class="footer">
+        <div class="Discover">
+            <h1>THE E-BOUTIQUE SERVICES</h1>
+        </div>
+        <div class="eboutique-services">
+            <div class="service">
+                <i class="fa-solid fa-truck"></i>
+                <h2>COMPLIMENTARY SHIPPING</h2>
+                <p>Enjoy complimentary Standard shipping for orders $90 or more.</p>
+            </div>
+            <div class="service">
+                <i class="fa-solid fa-arrows-spin"></i>
+                <h2>DELIVERY & RETURNS</h2>
+                <p>Standard and Express delivery to Street addresses or PO Boxes. Free 30 day returns.</p>
+            </div>
+            <div class="service">
+                <i class="fa-solid fa-gift"></i>
+                <h2>THE ART OF GIFTING</h2>
+                <p>Your order will be presented in an iconic Dior gift box with a personalised message.</p>
+            </div>
+            <div class="service">
+                <i class="fa-brands fa-sketch"></i>
+                <h2>COMPLIMENTARY TRIAL SIZE</h2>
+                <p>Receive a choice of 2 complimentary samples with any order.</p>
+            </div>
+        </div>
+    </footer>
+
+    <footer class="footer-end">
+        <div class="eboutique-services-end">
+            <div class="service-end">
+                <h3>NEWSLETTER</h3>
+                <p>Sign up to receive information and news</p>
+                <div>
+                    <input type="text" name="search-email" id="search-email"  placeholder="Email address">
+                    <button type="submit">OK</button>
+                </div>
+            </div>
+            <div class="service-end">
+                    <ul><a href="#">Contact Us</a></ul>
+                    <ul><a href="#">Delivery & Returns</a></ul>
+                    <ul><a href="#">FAQ</a></ul>
+                    <ul><a href="#">Legal Terms & Conditions</a></ul>
+                    <ul><a href="#">Privacy & Data Protection</a></ul>
+            </div>
+            <div class="service-end">
+                <h3>FOLLOW US</h3>
+                <div class="footer-end_container">
+                    <div class="item"><a href="https://facebook.com/?locale=vi_VN"><i class="fa-brands fa-facebook"></i></a></div>
+                    <div class="item"><a href="https://x.com/?lang=vi&mx=2"><i class="fa-brands fa-twitter"></i></a></div>
+                    <div class="item"><a href="https://www.tiktok.com/vi-VN/"><i class="fa-brands fa-tiktok"></i></a></div>
+                    <div class="item"><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></div>
+                </div>                
+                <h3>COUNTRY / REGION</h3>
+                <h3>VietNam</h3>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
